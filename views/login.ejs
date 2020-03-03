@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css"
+        integrity="sha384-O8whS3fhG2OnA5Kas0Y9l3cfpmYjapjI0E4theH4iuMD+pLhbf6JI0jIMfYcK3yZ" crossorigin="anonymous">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <!-- Style css -->
+    <link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+
+    <div class="login-wrapper">
+        <i class="fas fa-users fa-5x"></i>
+        <div class="login-form">
+            <!-- <h3 class="mb-3">MEMBER LOGIN</h3> -->
+            <form method="POST" action="/login">
+                <div class="form-group">
+                    <select class="select" id="exampleFormControlSelect1">
+                        <option>Member</option>
+                        <option>Manager</option>
+                    </select>
+                </div>
+                <div class="input-group mb-3">
+                    <div class="  input-group-prepend">
+                        <i class="fas icon   fa-user fa-2x "></i>
+                    </div>
+                    <input type="text" class="form-control" placeholder="User name" name="name"
+                        aria-label="Example text with button addon" aria-describedby="button-addon1">
+                </div>
+                <div class="input-group mb-3">
+                    <div class="  input-group-prepend">
+                        <i class="fas icon   fa-lock fa-2x "></i>
+                    </div>
+                    <input name="password" type="password" class="form-control" placeholder="******"
+                        aria-label="Example text with button addon" aria-describedby="button-addon1">
+                </div>
+                <button type="submit" class="btn btn-lg w-100 b-login">Login</button>
+                <div class="checkbox ">
+                    <div class="c-text d-flex my-3">
+
+                        <input type="checkbox" class="c_box mr-1" aria-label="Checkbox for following text input">
+                        <p class="d-flex">
+                            Remember me? <p class="ml-auto"><a href="#" class="text-light">Forgot Password</a></p>
+                        </p>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="footer d-flex my-3">
+            <p class="mr-3">Don't have a account?</p>
+            <div class="btn b-r btn-light"> <a href="/register">REGISTER HERE</a> </div>
+        </div>
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
