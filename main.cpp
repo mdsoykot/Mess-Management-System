@@ -27,7 +27,7 @@ void show_member(int n){
 	cout<<"\nname                phn                         address";
 	cout<<"\n----------------------------------------------------------"<<endl;
 	for(int i=0;i<t_member[n];i++){
-		cout<<name[i]<<"          "<<phn[i]<<"               "<<address[i]<<endl;
+		cout<<name[i]<<"             "<<phn[i]<<"                 "<<address[i]<<endl;
 	}
 
 }
@@ -37,15 +37,31 @@ void add_member(int n){
 	cout<<"\n                         "<<mess_name[n]<<" you can enter "<<t_member[n]<<" member data";
     for(int i=0;i<t_member[n];i++){
         cout<<"\n                         Enter the Data of member: "<<i+1<<endl<<endl;
-				cout<<"                         Enter name:";
-				cin>>name[i];
-				cout<<"                         Enter Mobile num: ";
-				cin>>phn[i];
-				cout<<"                         Enter address: ";
-				cin>>address[i];
+		cout<<"                         Enter name:";
+		cin>>name[i];
+		cout<<"                         Enter Mobile num: ";
+		cin>>phn[i];
+		cout<<"                         Enter address: ";
+		cin>>address[i];
     }
 }
-void remove_member(){}
+void remove_member(int n){
+	string m_name;
+	cout<<"Enter member name:";
+	cin>>m_name;
+	for(int i=0;i<t_member[n];i++){
+		if(name[i]==m_name){
+			for(int j=i;j<t_member[n];j++){
+				name[j]=name[j+1];
+				phn[j]=phn[j+1];
+				address[j]=address[j+1];
+			}
+			t_member[n]--;
+			cout<<"Your required record is deleted"<<endl;
+		}
+	}
+
+}
 void add_bazar(){}
 void show_bazar(){}
 
@@ -82,7 +98,7 @@ void login(){
 						add_member(m_n);
 						break;
 					case 2:
-						remove_member();
+						remove_member(m_n);
 						break;
 					case 3:
 						show_member(m_n);
