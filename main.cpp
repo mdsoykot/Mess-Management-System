@@ -1,7 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
-string name[20],phn[20],address[20],arr4[20],arr5[20],mess_name[20],manager_name[20],manager_email[20],passwrod[20];
-int t_mess=0,t_member[20];
+string name[20],phn[20],address[20],arr4[20],arr5[20],mess_name[20],manager_name[20],manager_email[20],passwrod[20],date[20],item[20];
+int t_mess=0,t_member[20],amount[20],t_bazar=0;
 
 void create(){
         
@@ -62,8 +62,27 @@ void remove_member(int n){
 	}
 
 }
-void add_bazar(){}
-void show_bazar(){}
+void add_bazar(){
+     for(int i=t_bazar;i<t_bazar+1;i++){
+		 cout<<"\n                         Enter bazar date:";
+		 cin>>date[i];
+		 cout<<"\n                         Enter bazar amount:";
+		 cin>>amount[i];
+		 cout<<"\n                         Enter bazar item:";
+		 cin>>item[i];
+	 }
+	 t_bazar++;
+}
+void show_bazar(){
+	cout<<"\n\n                         All"<<t_bazar<<"bazar list"<<endl;
+	cout<<"\n===========================Bazar Table====================";
+	cout<<"\n----------------------------------------------------------";
+	cout<<"\n date                items                         amount";
+	cout<<"\n----------------------------------------------------------"<<endl;
+	for(int i=0;i<t_bazar;i++){
+		cout<<date[i]<<"                "<<item[i]<<"                "<<amount[i]<<endl;
+	}
+}
 
 void login(){
 	int m_n;
