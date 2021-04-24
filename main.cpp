@@ -1,7 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
-string name[20],phn[20],address[20],arr4[20],arr5[20],mess_name[20],manager_name[20],manager_email[20],passwrod[20],date[20],item[20];
-int t_mess=0,t_member[20],amount[20],t_bazar=0;
+string name[20],phn[20],address[20],arr4[20],arr5[20],mess_name[20],manager_name[20],manager_email[20],passwrod[20],bdate[20],mdate[20],item[20],m_name[20];
+int t_mess=0,t_member[20],amount[20],t_bazar=0,meal[20];
 
 void create(){
         
@@ -47,7 +47,7 @@ void add_member(int n){
 }
 void remove_member(int n){
 	string m_name;
-	cout<<"Enter member name:";
+	cout<<"                         Enter member name:";
 	cin>>m_name;
 	for(int i=0;i<t_member[n];i++){
 		if(name[i]==m_name){
@@ -57,7 +57,7 @@ void remove_member(int n){
 				address[j]=address[j+1];
 			}
 			t_member[n]--;
-			cout<<"Your required record is deleted"<<endl;
+			cout<<"                         Your required record is deleted"<<endl;
 		}
 	}
 
@@ -65,7 +65,7 @@ void remove_member(int n){
 void add_bazar(){
      for(int i=t_bazar;i<t_bazar+1;i++){
 		 cout<<"\n                         Enter bazar date:";
-		 cin>>date[i];
+		 cin>>bdate[i];
 		 cout<<"\n                         Enter bazar amount:";
 		 cin>>amount[i];
 		 cout<<"\n                         Enter bazar item:";
@@ -80,7 +80,37 @@ void show_bazar(){
 	cout<<"\n date                items                         amount";
 	cout<<"\n----------------------------------------------------------"<<endl;
 	for(int i=0;i<t_bazar;i++){
-		cout<<date[i]<<"                "<<item[i]<<"                "<<amount[i]<<endl;
+		cout<<bdate[i]<<"                "<<item[i]<<"                "<<amount[i]<<endl;
+	}
+}
+void add_meal(int n){
+	 cout<<"total " <<t_member[n]<<" member of "<< mess_name[n]<<" mess"<<endl;
+	 int eat;
+	 cout<<"How many member eat today:";
+	 cin>>eat;
+	 if(eat>t_member[n]){
+		 cout<<"Invalid member number";
+	 }else{
+	for(int i=0;i<eat;i++){
+			cout<<"\n                         Enter date:";
+			cin>>mdate[i];
+			cout<<"\n                         Enter member name:";
+			cin>>m_name[i];
+			cout<<"\n                         Enter meal:";
+			cin>>meal[i];
+		}
+		t_bazar++;
+	 }
+	
+}
+void show_meal(int n){
+	cout<<"\n\n                         All"<<t_member[n]<<"meal list"<<endl;
+	cout<<"\n===========================meal Table====================";
+	cout<<"\n----------------------------------------------------------";
+	cout<<"\n date                items                         amount";
+	cout<<"\n----------------------------------------------------------"<<endl;
+	for(int i=0;i<t_member[n];i++){
+		cout<<mdate[i]<<"                "<<m_name[i]<<"                "<<meal[i]<<endl;
 	}
 }
 
@@ -105,8 +135,10 @@ void login(){
 					cout<<"\n                         Enter 1 for add member:";
 					cout<<"\n                         Enter 2 for remove member:";
 					cout<<"\n                         Enter 3 for show member:";
-					cout<<"\n                         Enter 4 for add bazar member:";
-					cout<<"\n                         Enter 5 for show bazar member:";
+					cout<<"\n                         Enter 4 for add bazar:";
+					cout<<"\n                         Enter 5 for show bazar:";
+					cout<<"\n                         Enter 6 for add meal:";
+					cout<<"\n                         Enter 7 for show meal :";
                     cout<<"\n\n                         Enter value: ";
 				    
 					cin>>value;
@@ -128,11 +160,16 @@ void login(){
 					case 5:
 						show_bazar();
 						break;
+					case 6:
+						add_meal(m_n);
+						break;
+					case 7:
+						show_meal(m_n);
+						break;
 					default:
 						break;
 					}
-				  }
-				  
+				  } 
 				
 			  }else{
 				  cout<<"\n password is invalid"<<endl;
